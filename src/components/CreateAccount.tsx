@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 const CreateAccount = () => {
     return (
@@ -11,7 +12,7 @@ const CreateAccount = () => {
                     <input type={'text'} className="card-title" placeholder='Name'></input>
                     <input type={'text'} className="card-title" placeholder='Email'></input>
                     <input type={'text'} className="card-title" placeholder='Password'></input>
-                    <input type={'button'} className="btn btn-primary" value={'Create\nAccount'}></input>
+                    <motion.input whileHover={{scale: 1.07}} type={'button'} className="btn btn-dark" value={'Create\nAccount'}></motion.input>
                 </div>
             </div>
         </div>
