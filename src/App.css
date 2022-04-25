@@ -23,3 +23,8 @@
 .dropdown-desc {
   left: 125px;
 }
+.home-container {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
