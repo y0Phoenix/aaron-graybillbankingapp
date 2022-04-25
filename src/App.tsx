@@ -20,10 +20,10 @@ function App() {
 					<Alert />
 					<Routes>
 						<Route path='/' element={<Home />}/>
-						<Route path='/' element={<AllData />}/>
-						<Route path='/' element={<CreateAccount />}/>
-						<Route path='/' element={<Deposit />}/>
-						<Route path='/' element={<Withdraw />}/>
+						<Route path='/alldata' element={<AllData />}/>
+						<Route path='/createaccount' element={<CreateAccount />}/>
+						<Route path='/deposit' element={<Deposit />}/>
+						<Route path='/withdraw' element={<Withdraw />}/>
 					</Routes>
 				</>
 			</Router>
