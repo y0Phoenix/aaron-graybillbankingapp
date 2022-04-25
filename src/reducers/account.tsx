@@ -25,9 +25,9 @@ const initialState: Account[] = [];
 
 export default function(state = initialState, action: BalanceAction) {
     const {type, payload} = action;
-    const {name, amount, additional} = payload;
+    if (payload) var {name, amount, additional} = payload;
     const i = state.map(account => account.name).indexOf(name);
-    if (i <= -1 && type !== 'CREATE_ACCOUNT') return; 
+    if (i <= -1 && type !== 'CREATE_ACCOUNT') return state; 
     switch (type) {
         case 'DEPOSIT':
             state[i].balance = state[i].balance + amount
@@ -39,6 +39,6 @@ export default function(state = initialState, action: BalanceAction) {
             state.push(new Account({...additional, name}));
             return state;
         default:
-            break;
+            return state;
     }
 }

@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { motion } from 'framer-motion'
+import { connect, ConnectedProps } from 'react-redux';
+import { setAlert } from '../actions/alert';
 
-const CreateAccount = () => {
+const connector = connect(null, {setAlert});
+type Props = ConnectedProps<typeof connector>;
+
+const CreateAccount: FC<Props> = ({setAlert}) => {
     return (
         <div className='createaccount-main'>
             <div>
@@ -12,11 +17,12 @@ const CreateAccount = () => {
                     <input type={'text'} className="card-title" placeholder='Name'></input>
                     <input type={'text'} className="card-title" placeholder='Email'></input>
                     <input type={'text'} className="card-title" placeholder='Password'></input>
-                    <motion.input whileHover={{scale: 1.07}} type={'button'} className="btn btn-dark" value={'Create\nAccount'}></motion.input>
+                    <motion.input onClick={() => setAlert({title: 'Created Account', text: 'Successfully Created Bank Account You May Now Deposit Some Cash', show: true, type: 'success'})} whileHover={{scale: 1.07}} type={'button'} className="btn btn-dark" value={'Create\nAccount'}></motion.input>
                 </div>
             </div>
         </div>
     )
 }
 
-export default CreateAccount
+
+export default connector(CreateAccount);
