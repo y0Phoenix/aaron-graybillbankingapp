@@ -41,3 +41,17 @@
 .actions-text {
   font-size: large;
 }
+.alldata-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  gap: 20px;
+}
+.alldata-content {
+  display: flex;
+  justify-content: center;
+}
+.alldata-container h5 {
+  padding: 15px;
+}
