@@ -11,6 +11,9 @@
 }
 .nav-item-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
 }
 .description {
   color: black;
@@ -54,4 +57,13 @@
 }
 .alldata-container h5 {
   padding: 15px;
+}
+.active {
+  background-color: black;
+}
+.active-light {
+  background-color: rgb(197, 197, 197);
+}
+.main {
+  padding-left: 15px;
 }
