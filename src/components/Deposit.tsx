@@ -16,11 +16,11 @@ type Props = ConnectedProps<typeof connector>;
 const Deposit: React.FC<Props> = ({balance, deposit, setAlert}) => {
 	const submit = useRef<HTMLButtonElement>(null);
 
-	const [amount, setAmount] = useState('0.00');
+	const [amount, setAmount] = useState('');
 
 	useEffect(() => {
 		if (!submit.current) return;
-		if (parseFloat(amount) <= 0 || amount === '') submit.current.disabled = true;
+		if (amount === '') submit.current.disabled = true;
 		else submit.current.disabled = false;
 	}, [amount]);
 
@@ -55,7 +55,7 @@ const Deposit: React.FC<Props> = ({balance, deposit, setAlert}) => {
 						<br></br>
 						<br></br>
 						<div className='actions-text'>Deposit Amount</div>
-						<input onChange={(e) => setAmount(e.target.value)} value={amount} name='amount' type={'text'} className="card-title"></input>
+						<input onChange={(e) => setAmount(e.target.value)} value={amount} name='amount' type={'text'} className="card-title" placeholder='0.00'></input>
 						<motion.button ref={submit} disabled whileHover={{scale: 1.07}} type={'submit'} className="btn btn-dark">
 							Deposit
 						</motion.button>

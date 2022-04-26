@@ -32,6 +32,11 @@ const CreateAccount: FC<Props> = ({users, setAlert, addAccount}) => {
 
     const onsubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!name) return setAlert({
+            title: 'Name Required',
+            text: 'A Name Is Required In Order To Create An Account',
+            type: 'danger'
+        })
         if (!email) return setAlert({
             title: 'Email Required',
             text: 'Account Email Is Required In Order To Register',
