@@ -48,7 +48,7 @@ const CreateAccount: FC<Props> = ({users, setAlert, addAccount}) => {
             text: 'Your Password Must Be Greater Than Or Equal To 8',
             type: 'danger'
         });
-        addAccount({name, amount: 0, additional: {email, password}});
+        addAccount(formData);
         setAlert({
             title: 'Account Created',
             text: 'Account Created Successfully You May Now Deposit Some Cash',
@@ -56,7 +56,7 @@ const CreateAccount: FC<Props> = ({users, setAlert, addAccount}) => {
         });
         setFormData({name: '', email: '', password: ''});
         if (!submit.current) return;
-        submit.current.innerHTML = 'Add Another Account';
+        submit.current.innerHTML = 'Add Another<br>Account';
     }
 
     return (

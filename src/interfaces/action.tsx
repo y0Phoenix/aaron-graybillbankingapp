@@ -4,12 +4,9 @@ export interface AccountAction {
 };
 
 export interface AccountPayload {
-    name: string,
-    amount: number,
-    additional: {
-        email: string,
-        password: string
-    }
+    name: string
+    email: string,
+    password: string
 }
 
 export interface SetAlertAction {
@@ -28,5 +25,10 @@ export interface SetAlertPayload {
 }
 
 export interface RemoveAlertAction {
+    type: string
+};
+
+export interface BalanceAction {
+    payload: string,
     type: string
 };
