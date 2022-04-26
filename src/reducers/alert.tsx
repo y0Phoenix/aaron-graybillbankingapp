@@ -13,7 +13,7 @@ export default function(state = initialState, action: SetAlertAction) {
     const {type, payload} = action;
     switch (type) {
         case 'SET_ALERT':
-            state = payload
+            state = {...payload, show: true};
             return state;
         case 'REMOVE_ALERT':
             state = {title: '', text: '', type: '', show: false}

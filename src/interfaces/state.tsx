@@ -1,6 +1,6 @@
 export interface State {
     alert: Alert,
-    users: Array<User> 
+    account: Array<User> 
 }
 
 export interface Alert {

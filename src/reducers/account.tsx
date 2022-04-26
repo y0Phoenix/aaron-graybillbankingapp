@@ -1,4 +1,4 @@
-import {BalanceAction} from "../interfaces/action";
+import {AccountAction} from "../interfaces/action";
 
 interface account {
     name: string,
@@ -23,7 +23,7 @@ class Account {
 
 const initialState: Account[] = [];
 
-export default function(state = initialState, action: BalanceAction) {
+export default function(state = initialState, action: AccountAction) {
     const {type, payload} = action;
     if (payload) var {name, amount, additional} = payload;
     const i = state.map(account => account.name).indexOf(name);

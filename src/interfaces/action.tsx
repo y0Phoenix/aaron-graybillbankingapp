@@ -1,9 +1,9 @@
-export interface BalanceAction {
+export interface AccountAction {
     type: string,
-    payload: BalancePayload
+    payload: AccountPayload
 };
 
-export interface BalancePayload {
+export interface AccountPayload {
     name: string,
     amount: number,
     additional: {
@@ -17,16 +17,14 @@ export interface SetAlertAction {
     payload: {
         title: string,
         text: string
-        type: string,
-        show: boolean
+        type: string
     }
 };
 
 export interface SetAlertPayload {
     title: string,
     text: string,
-    type: string,
-    show: boolean
+    type: string
 }
 
 export interface RemoveAlertAction {

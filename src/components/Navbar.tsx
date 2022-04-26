@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -15,7 +15,19 @@ const Navbar = () => {
 		deposit: false,
 		allData: false
 	});
-	const toggleDesc = (type: string) => setShow({...show, [type]: !show[type as keyof typeof show]});
+	const [checkShow, setCheckShow] = useState('');
+
+	useEffect(() => {
+		if (checkShow == '') return;
+		const bool = show[checkShow as keyof typeof show];
+		if (bool) setShow({...show, [checkShow]: false});
+		setCheckShow('');
+	}, [checkShow]);
+
+	const toggleDesc = (type: string) => {
+		setTimeout(() => setCheckShow(type), 3000);
+		setShow({...show, [type]: !show[type as keyof typeof show]});
+	}
 
 	const Description = ({type, text}: Desc) => 
 		<>
@@ -77,4 +89,4 @@ const Navbar = () => {
 	)
 }
 
-export default Navbar
+export default Navbar;
