@@ -27,6 +27,11 @@ const Deposit: React.FC<Props> = ({balance, deposit, setAlert}) => {
 	const onsubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const Amount = amount.replace(/$/g, '');
+		if (isNaN(parseFloat(Amount))) return setAlert({
+			title: 'Invalid Deposit',
+			text: 'Only Enter Numbers In The Input Field',
+			type: 'danger'
+		});
 		if (parseFloat(Amount) <= 0) return setAlert({
 			title: 'Invalid Amount',
 			text: 'Deposit Amount Must Be Greater Than 0',
@@ -41,7 +46,7 @@ const Deposit: React.FC<Props> = ({balance, deposit, setAlert}) => {
 	}
 
 	return (
-		<div className='deposit-container'>
+		<div className='actions-container'>
 			<h1>Deposit</h1>
 			<div className='card' style={{width: "18rem"}}>
 				<div className='card-body center'>
