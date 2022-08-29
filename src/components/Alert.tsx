@@ -11,6 +11,7 @@ const AlertModal: React.FC<HeaderProps> = (props) => {
 			{alert.show &&
 				<Modal show={alert.show} onHide={() => removeAlert()}>
 					<Modal.Header style={{backgroundColor: `${alert.type === 'success' ? 'green' : 'red'}`, color: 'black'}} closeButton>
+						
 						<Modal.Title>{alert.title}</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>{alert.text}</Modal.Body>
